@@ -1,0 +1,63 @@
+.todo-item {
+	width: 100%;
+	list-style: none;
+	background: #ffffff;
+	color: #4c4b5b;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	height: 64px;
+	padding: 0 16px;
+	border-radius: 10px;
+
+	&.completed {
+		label {
+			background: linear-gradient(45deg, #57ddff, #c058f3);
+			border: 0;
+
+			&::before {
+				opacity: 1;
+			}
+		}
+
+		.todo-item__title {
+			text-decoration: line-through;
+			color: #d1d1d3;
+		}
+	}
+
+	label {
+		height: 32px;
+		width: 32px;
+		display: block;
+		border-radius: 50%;
+		border: 1px solid #d7d7d7;
+		position: relative;
+
+		&::before {
+			content: "";
+			opacity: 0;
+			background: url(../../assets/icon-check.svg) no-repeat center;
+			height: 14px;
+			width: 14px;
+			display: block;
+			top: 50%;
+			left: 50%;
+			position: absolute;
+			transform: translate(-50%, -50%);
+			background-size: contain;
+			transition: 0.3s ease-in-out;
+		}
+	}
+
+	&__title {
+		margin-left: 16px;
+		font-weight: 400;
+		font-size: 22px;
+		transition: 0.2s ease-in-out;
+	}
+
+	&__complete-todo {
+		display: none;
+	}
+}
