@@ -14,7 +14,9 @@ const App = () => {
 		<Header />
 		<main>
 			<NewTodo />
-			<TodoList todoList={todoList} />
+			<div className="todo-area">
+				<TodoList todoList={todoList} />
+			</div>
 		</main>
 	</>
     );
