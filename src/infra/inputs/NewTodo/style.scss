@@ -12,20 +12,21 @@
 		outline: 4px solid #f5a52d;
 	}
 
-	label {
+	&__complete {
 		height: 32px;
 		width: 32px;
 		display: block;
 		border-radius: 50%;
-		border: 1px solid #d7d7d7;
 		position: relative;
+		border: 0;
+		background: linear-gradient(45deg, #57ddff, #c058f3);
+		cursor: pointer;
 
 		&::before {
 			content: "";
-			opacity: 0;
-			background: url(../../../assets/icon-check.svg) no-repeat center;
-			height: 14px;
-			width: 14px;
+			background: url(../../../assets/plus.svg) no-repeat center;
+			height: 20px;
+			width: 20px;
 			display: block;
 			top: 50%;
 			left: 50%;
@@ -33,19 +34,6 @@
 			transform: translate(-50%, -50%);
 			background-size: contain;
 			transition: 0.3s ease-in-out;
-		}
-	}
-
-	&__complete {
-		display: none;
-
-		&:checked + label {
-			background: linear-gradient(45deg, #57ddff, #c058f3);
-			border: 0;
-
-			&::before {
-				opacity: 1;
-			}
 		}
 	}
 

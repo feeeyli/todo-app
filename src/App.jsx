@@ -4,21 +4,22 @@ import Header from "./infra/layout/Header";
 import TodoList from './infra/layout/TodoList';
 
 const App = () => {
-	const [todoList] = useState([
-		{title: "First Todo", completed: false},
-		{title: "Second Todo", completed: false},
-	]);
+	const [todoList, setTodoList] = useState([]);
+
+	function createTodo({ target }) {
+		setTodoList([{title: target.nextSibling.value, completed: false},...todoList]);
+	}
 
     return (
         <>
-		<Header />
-		<main>
-			<NewTodo />
-			<div className="todo-area">
-				<TodoList todoList={todoList} />
-			</div>
-		</main>
-	</>
+			<Header />
+			<main>
+				<NewTodo createTodo={createTodo} />
+				<div className="todo-area">
+					<TodoList todoList={todoList} />
+				</div>
+			</main>
+		</>
     );
 }
 

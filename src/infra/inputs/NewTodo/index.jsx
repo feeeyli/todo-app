@@ -1,16 +1,10 @@
 import React from "react";
 import "./style.scss";
 
-const NewTodo = () => {
+const NewTodo = ({ createTodo }) => {
 	return (
 		<div className="new-todo">
-			<input
-				type="checkbox"
-				name="complete-todo"
-				id="complete-todo"
-				className="new-todo__complete"
-			/>
-			<label htmlFor="complete-todo"></label>
+			<button className="new-todo__complete" onClick={createTodo} ></button>
 			<input
 				type="text"
 				className="new-todo__input"
