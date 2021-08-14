@@ -9,6 +9,14 @@ const App = () => {
 	function createTodo({ target }) {
 		setTodoList([{title: target.nextSibling.value, completed: false},...todoList]);
 	}
+	
+	function completeTodo(todoId) {
+		setTodoList(todoList.map((task, id) => {
+			if ( todoId === id ) return { ...task, completed: !task.completed }
+
+			return task
+		} ));
+	}
 
     return (
         <>
@@ -16,7 +24,7 @@ const App = () => {
 			<main>
 				<NewTodo createTodo={createTodo} />
 				<div className="todo-area">
-					<TodoList todoList={todoList} />
+					<TodoList todoList={todoList} completeTodo={completeTodo} />
 				</div>
 			</main>
 		</>
