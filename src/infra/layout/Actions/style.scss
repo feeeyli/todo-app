@@ -1,0 +1,37 @@
+.actions {
+	height: 58px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+	color: #95949a;
+
+	&__filter {
+		.filter__mode {
+			color: #97969b;
+			border: 0;
+			outline: 0;
+			background: transparent;
+			margin: 8px;
+			font-size: 16px;
+			cursor: pointer;
+
+			&:hover {
+				color: #8ba2ce;
+			}
+
+			&.active {
+				color: #4a7ee3;
+			}
+		}
+	}
+
+	&__clear {
+		color: #95949a;
+		border: 0;
+		outline: 0;
+		background: transparent;
+		font-size: 16px;
+		cursor: pointer;
+	}
+}
