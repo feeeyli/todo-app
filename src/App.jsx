@@ -25,7 +25,7 @@ const App = () => {
 	}
 
 	function clearTodoList() {
-		setTodoList([])
+		setTodoList(todoList.filter( todo => todo.completed === false ))
 	}
 
     return (
