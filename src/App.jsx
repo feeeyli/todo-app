@@ -21,6 +21,10 @@ const App = () => {
 		} ));
 	}
 
+	function deleteTodo(todoId) {
+		setTodoList(todoList.filter( (todo, id) => id !== todoId ))
+	}
+
 	function filterTodoList({target}) {
 		setFilterMode(target.dataset.filterMode)
 	}
@@ -36,7 +40,7 @@ const App = () => {
 				<NewTodo createTodo={createTodo} />
 				{todoList.length > 0 && (
 					<div className="todo-area">
-						<TodoList todoList={todoList} completeTodo={completeTodo} filterMode={filterMode} />
+						<TodoList todoList={todoList} completeTodo={completeTodo} filterMode={filterMode} deleteTodo={deleteTodo} />
 						<Actions filterTodoList={filterTodoList} todosLeft={todoList.filter( todo => todo.completed === false ).length} actualFilter={filterMode} clearTodoList={clearTodoList} />
 					</div>
 				) }

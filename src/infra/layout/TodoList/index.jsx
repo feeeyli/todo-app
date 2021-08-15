@@ -1,7 +1,7 @@
 import React from 'react';
 import TodoItem from '../../../components/TodoItem';
 
-const TodoList = ({ todoList, completeTodo, filterMode }) => {
+const TodoList = ({ todoList, completeTodo, filterMode, deleteTodo }) => {
     const filterBy = {
         completed: () => todoList.filter( todo => todo.completed === true ),
         active: () => todoList.filter( todo => todo.completed === false )
@@ -11,7 +11,7 @@ const TodoList = ({ todoList, completeTodo, filterMode }) => {
 
     return (
         <ul className="todo-list">
-            {filteredTodoList.map( (todo, key) => <TodoItem todo={todo} key={key} id={key} completeTodo={completeTodo} /> )}
+            {filteredTodoList.map( (todo, key) => <TodoItem todo={todo} key={key} id={key} completeTodo={completeTodo} deleteTodo={deleteTodo} /> )}
         </ul>
     );
 }

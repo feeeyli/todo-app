@@ -9,6 +9,7 @@
 	height: 64px;
 	padding: 0 16px;
 	border-bottom: 1px solid #e6e5ea;
+	position: relative;
 
 	&.completed {
 		label {
@@ -59,5 +60,34 @@
 
 	&__complete-todo {
 		display: none;
+	}
+
+	&:hover .delete {
+		display: block;
+	}
+
+	.delete {
+		display: none;
+		position: absolute;
+		right: 16px;
+		background: transparent;
+		border: 0;
+		height: 32px;
+		width: 32px;
+		cursor: pointer;
+
+		&::before {
+			content: "";
+			background: url(../../assets/trash.svg) no-repeat center;
+			background-size: auto;
+			height: 22px;
+			width: 22px;
+			display: block;
+			top: 50%;
+			left: 50%;
+			position: absolute;
+			transform: translate(-50%, -50%);
+			background-size: contain;
+		}
 	}
 }
