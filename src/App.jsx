@@ -10,6 +10,7 @@ const App = () => {
 
 	function createTodo({ target }) {
 		setTodoList([{title: target.nextSibling.value, completed: false},...todoList]);
+		target.nextSibling.value = ""
 	}
 	
 	function completeTodo(todoId) {
