@@ -24,6 +24,10 @@ const App = () => {
 		setFilterMode(target.dataset.filterMode)
 	}
 
+	function clearTodoList() {
+		setTodoList([])
+	}
+
     return (
         <>
 			<Header />
@@ -32,7 +36,7 @@ const App = () => {
 				{todoList.length > 0 && (
 					<div className="todo-area">
 						<TodoList todoList={todoList} completeTodo={completeTodo} filterMode={filterMode} />
-						<Actions filterTodoList={filterTodoList} todosLeft={todoList.filter( todo => todo.completed === false ).length} actualFilter={filterMode} />
+						<Actions filterTodoList={filterTodoList} todosLeft={todoList.filter( todo => todo.completed === false ).length} actualFilter={filterMode} clearTodoList={clearTodoList} />
 					</div>
 				) }
 			</main>
